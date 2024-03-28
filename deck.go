@@ -32,12 +32,24 @@ func (d deck) ShowList() {
 }
 
 //shuffle and get 1
-func (d deck) ShuffleAndGet1() string{
-	randId := rand.Intn(len(d))
-	randCard := d[randId]
-	fmt.Println("gia tri sau khi shuffle ",randCard)
-	return randCard
+func (d deck) Deal(size int) deck{
+	// randId := rand.Intn(len(d))
+	// randCard := d[randId]
+	// fmt.Println("gia tri sau khi shuffle ",randCard)
+	
+	if size > len(d){
+		fmt.Println("not enough card in the deck")
+		return d
+	}
+	newHand := newDeck()
+	for i:= 0, i<size, i++{
+		
+	}
+
+	return d[:size]
 }
+
+
 func (d deck) shuffle() {
 	for i := range d {
         j := rand.Intn(i + 1) // Random index between 0 and i (inclusive)
